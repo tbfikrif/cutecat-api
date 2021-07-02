@@ -2,7 +2,10 @@ require 'net/http'
 require 'uri'
 
 class GetCatData
-  def initialize
+  def initialize(tags:, skip:, limit:)
+    @tags = tags
+    @skip = skip
+    @limit = limit
     @result = {}
   end
 
@@ -28,8 +31,8 @@ class GetCatData
   end
 
   def send_request
-    cataas_url   = 'https://cataas.com/api/cats?tags=cute'
-    uri          = URI.parse(cataas_url.to_s)
+    cataas_url   = 'https://cataas.com/api/cats'
+    uri          = URI.parse("#{cataas_url}?tags=#{@tags}&skip=#{@skip}&limit=#{@limit}")
     http         = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     http.get(uri, set_header)

@@ -1,8 +1,8 @@
 class CatWorker
   include Sidekiq::Worker
 
-  def perform
-    data = GetCatData.new.fetch
+  def perform(tags, skip, limit)
+    data = GetCatData.new(tags: tags, skip: skip, limit: limit).fetch
     random_name = RandomNameGenerator.new
     data[:response].map do |cat|
       existing_cat = Cat.find_by(api_id: cat['id'])
