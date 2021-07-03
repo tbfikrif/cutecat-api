@@ -50,3 +50,22 @@ gem 'rubocop', '~> 1.18', require: false
 
 # Random Name
 gem 'random_name_generator', '~> 2.0'
+
+# Serializer JSON API
+gem 'active_model_serializers', '~> 0.10.12'
+
+# File Uploader
+gem 'carrierwave', '~> 2.2', '>= 2.2.1'
+
+# Enumerator
+gem 'enumerize', '~> 2.4'
+
+# Pagination
+gem 'kaminari', '~> 1.2', '>= 1.2.1'
+
+# Search & Filtering
+gem 'ransack', '~> 2.4', '>= 2.4.2'
+
+# Authentication
+gem 'devise', '~> 4.8'
+gem 'devise-jwt', '~> 0.8.1'
