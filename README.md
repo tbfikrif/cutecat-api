@@ -4,9 +4,9 @@
 
 - Ruby version 3.0.1
 
-- Rails version 6.1.3.2
+- Rails version 6.1.4
 
-- PostgreSQL version 12.6
+- SQLite3
 
 ### Configuration
 
